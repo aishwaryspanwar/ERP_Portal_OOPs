@@ -1,11 +1,40 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+class User{
+-Courses
++main()
+#addCourse()
+#removeCourse()
+#getCourses()
+}
+class Professor Extends User{
+-CHECK_PASS
+-CHECK_ID
++run()
+-StartMenu()
++showCourses()
+-managecourse()
+-viewEnrolledStudents()
+-login()
 
-autonumber
-
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+}
+class Student Extends User{
+-CHECK_PASS
+-CHECK_ID
+-regCoursesFinal
++run()
+-StartMenu()
++showCourses()
+-managecourse()
+-viewEnrolledStudents()
+-login()
+}
+class Administrator Extends User{
+-CHECK_PASS
+-CHECK_ID
++run()
+-StartMenu()
+-manageCourseAdmin()
+-showCourses()
+-login()
+}
 @enduml
